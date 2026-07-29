@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registration</title>
+  </head>
+  <body>
+    <form method="POST">
+      <fieldset>
+        <legend>Register</legend>
+        <br />
+        <label for="username">Full Name:</label>
+        <input type="text" id="username" name="username" required /><br /><br />
+        <label for="email">Email:</label>
+        <input
+          style="margin: 20px"
+          type="email"
+          id="email"
+          name="email"
+          required
+        /><br /><br />
+        <select name="Course Level" id="Ccourse Level" required>
+          <option value="">Select Course Level</option>
+          <option value="1st Year">1st Year</option>
+          <option value="2nd Year">2nd Year</option>
+          <option value="3rd Year">3rd Year</option>
+          <option value="4th Year">4th Year</option>
+          <option value="5th+ Year">5th+ Year</option></select
+        ><br /><br />
+        <label for="Comments" id="Comments">Comments:</label><br />
+        <textarea
+          style="width: 50%; height: 100px"
+          id="Comments"
+          name="Comments"
+        ></textarea
+        ><br /><br />
+        <button type="submit">Submit</button>
+      </fieldset>
+    </form>
+    <br />
+    <table>
+      <caption>
+        Grading rubric
+      </caption>
+      <thead scope="col">
+        <tr>
+          <th>Grade</th>
+          <th>Assessment</th>
+          <th>Remark</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>95+</td>
+          <td>Excellent</td>
+          <td>Passed</td>
+        </tr>
+        <tr>
+          <td>85-94</td>
+          <td>Good</td>
+          <td>Passed</td>
+        </tr>
+        <tr>
+          <td>70-84</td>
+          <td>Average</td>
+          <td>Passed</td>
+        </tr>
+        <tr>
+          <td>60-69</td>
+          <td>Below Average</td>
+          <td>Failed</td>
+        </tr>
+        <tr>
+          <td>59 below</td>
+          <td>Fail</td>
+          <td>Failed</td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>
