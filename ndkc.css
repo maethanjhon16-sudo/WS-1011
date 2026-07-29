@@ -1,0 +1,155 @@
+/* Simple stylesheet for the quiz pages */
+:root{
+  --bg:#eef3f8;
+  --card:#ffffff;
+  --accent:#2b6cb0;
+  --muted:#6b7280;
+  --radius:8px;
+  --max-width:900px;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;
+  background:var(--bg);
+  color:#111827;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.4;
+  padding:24px;
+}
+
+.container{
+  max-width:var(--max-width);
+  margin:0 auto;
+  background:transparent;
+}
+
+header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+  margin-bottom:14px;
+}
+
+header{padding:8px 0}
+header img{width:72px;height:72px;object-fit:contain}
+.brand{padding:0 8px}
+
+.brand{flex:1;text-align:center}
+.brand h1{font-size:1.15rem;margin:0}
+.brand p{margin:4px 0 0;color:var(--muted);font-size:0.92rem}
+
+h1{font-size:1.4rem;margin:0}
+
+nav ul{list-style:none;margin:0;padding:0;display:flex;gap:8px;justify-content:center}
+nav ul li{margin:0}
+nav a{
+  color:var(--muted);
+  text-decoration:none;
+  padding:8px 10px;
+  border-radius:6px;
+  font-size:0.95rem;
+}
+nav a:hover{background:rgba(43,108,176,0.08);color:var(--accent)}
+
+.card{
+  background:var(--card);
+  border-radius:var(--radius);
+  padding:20px;
+  box-shadow:0 1px 2px rgba(16,24,40,0.04), 0 6px 20px rgba(2,6,23,0.06);
+  margin-bottom:16px;
+}
+
+main{display:block}
+
+form{display:grid;gap:12px}
+
+label{font-size:0.9rem;color:var(--muted)}
+
+input[type="text"],input[type="email"],textarea,select{
+  width:100%;
+  padding:10px 12px;
+  border:1px solid #e6e9ef;
+  border-radius:6px;
+  font-size:0.95rem;
+  background:#fff;
+}
+
+textarea{min-height:120px;resize:vertical}
+
+.row{display:flex;gap:12px}
+.row > *{flex:1}
+
+.btn{
+  display:inline-block;
+  background:var(--accent);
+  color:#fff;
+  padding:10px 14px;
+  border-radius:6px;
+  border:none;
+  cursor:pointer;
+  font-weight:600;
+}
+.btn.secondary{background:#eef2ff;color:var(--accent);border:1px solid #dbeafe}
+
+.muted{color:var(--muted);font-size:0.9rem}
+
+footer{margin-top:28px;color:var(--muted);font-size:0.85rem;text-align:center}
+
+@media (max-width:640px){
+  body{padding:16px}
+  header{flex-direction:column;align-items:flex-start;gap:8px}
+  .row{flex-direction:column}
+}
+
+/* Utility spacing */
+.sp-sm{height:8px}
+.sp-md{height:16px}
+.sp-lg{height:28px}
+
+/* Layout: main + sidebar */
+.container{
+  max-width:var(--max-width);
+  margin:0 auto;
+  background:transparent;
+  display:grid;
+  grid-template-columns:1fr 280px;
+  gap:20px;
+  align-items:start;
+  padding:0 12px;
+}
+
+.sidebar{ background:var(--card);padding:16px;border-radius:8px;box-shadow:0 1px 2px rgba(2,6,23,0.04)}
+
+/* Announcements box */
+.announcements{background:var(--card);padding:12px;border-radius:8px;box-shadow:0 1px 2px rgba(2,6,23,0.04)}
+.announcements h2{margin:0 0 8px;font-size:1rem}
+.announcements ul{margin:0;padding:0;list-style:none}
+.announcements marquee{display:block;height:160px;padding-right:6px}
+
+/* Tables */
+table{width:100%;border-collapse:collapse;background:var(--card);border-radius:8px;overflow:hidden}
+table th, table td{padding:10px 12px;border-bottom:1px solid #eef2f6;text-align:left}
+table th{background:#f1f5f9;color:var(--muted);font-weight:700}
+table tr:last-child td{border-bottom:none}
+
+/* Responsive images and media */
+img{max-width:100%;height:auto;display:block}
+
+footer img{display:inline-block;vertical-align:middle;margin-left:6px;width:24px;height:24px}
+
+/* Limit very large logos embedded inline */
+header > img:first-child, header > img:last-child{width:72px;max-width:72px;height:auto}
+
+@media (max-width:640px){
+  header > img:first-child, header > img:last-child{width:48px;max-width:48px}
+}
+
+@media (max-width:900px){
+  .container{grid-template-columns:1fr}
+  nav ul{justify-content:flex-start}
+}
